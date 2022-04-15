@@ -1,0 +1,26 @@
+anchor author [0.97, 0.49]
+anchor reader [0.98, 0.87]
+component post [0.89, 0.65]
+component platform [0.77, 0.60]
+component hosting [0.64, 0.77]
+component centralized-hosting [0.64, 0.85]
+component federated-hosting [0.64, 0.53] 
+component p2p-hosting [0.64, 0.35]
+component mesh-hosting [0.64, 0.16]
+component server [0.51, 0.76]
+component network [0.37, 0.66]
+component ISP [0.24, 0.74]
+component client [0.84, 0.45]
+
+
+author->post
+reader->post
+post->platform
+platform+<>hosting
+hosting->server
+server->network
+network->ISP
+federated-hosting->server
+p2p-hosting->client
+client->network
+mesh-hosting->client
